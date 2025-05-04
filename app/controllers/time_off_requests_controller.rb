@@ -13,6 +13,7 @@ class TimeOffRequestsController < ApplicationController
 
   def update
     if @time_off_request.update(status: params[:status])
+      TimeOffRequestMailer.status_update(@time_off_request).deliver_now
       render json: @time_off_request
     else
       render json: { errors: @time_off_request.errors.full_messages }, status: :unprocessable_entity

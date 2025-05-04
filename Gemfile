@@ -44,4 +44,9 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  # Linting and formatting [https://rubydoc.info/gems/rubocop]
+  gem 'letter_opener'
+  gem 'letter_opener_web', require: 'letter_opener_web'
+  gem 'dotenv-rails', groups: [:development, :test]
+  
 end
